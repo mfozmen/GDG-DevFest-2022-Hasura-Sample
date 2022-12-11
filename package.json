@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mfozmen/GDG-DevFest-2022-Hasura-Sample#readme",
   "devDependencies": {
     "@aaronhayes/hasura-cli": "^2.16.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
