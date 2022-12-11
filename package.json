@@ -1,0 +1,22 @@
+{
+  "name": "gdg-devfest-2022-hasura-sample",
+  "version": "1.0.0",
+  "description": "## Run",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfozmen/GDG-DevFest-2022-Hasura-Sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfozmen/GDG-DevFest-2022-Hasura-Sample/issues"
+  },
+  "homepage": "https://github.com/mfozmen/GDG-DevFest-2022-Hasura-Sample#readme",
+  "devDependencies": {
+    "@aaronhayes/hasura-cli": "^2.16.0"
+  }
+}
