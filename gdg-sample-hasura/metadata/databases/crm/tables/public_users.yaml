@@ -12,3 +12,12 @@ remote_relationships:
           name: baskets
           schema: public
     name: users_baskets
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - username
+      filter:
+        id:
+          _eq: X-Hasura-User-Id

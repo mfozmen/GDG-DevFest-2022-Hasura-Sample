@@ -1,0 +1,11 @@
+type Mutation {
+  loginUser(
+    username: String!
+    password: String!
+  ): LoginUserOutput
+}
+
+type LoginUserOutput {
+  accessToken: String!
+}
+

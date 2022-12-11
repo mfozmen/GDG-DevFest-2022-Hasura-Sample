@@ -8,3 +8,26 @@ object_relationships:
   - name: product
     using:
       foreign_key_constraint_on: product_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        basket:
+          user_id:
+            _eq: X-Hasura-User-Id
+      columns:
+        - basket_id
+        - count
+        - product_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - basket_id
+        - count
+        - id
+        - product_id
+      filter:
+        basket:
+          user_id:
+            _eq: X-Hasura-User-Id

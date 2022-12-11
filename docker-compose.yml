@@ -9,8 +9,11 @@ services:
       HASURA_GRAPHQL_CRM_DATABASE_URL: postgres://postgres:postgres@postgres:5432/crm
       HASURA_GRAPHQL_MAIN_DATABASE_URL: postgres://postgres:postgres@postgres:5432/main
       HASURA_GRAPHQL_DEV_MODE: 'true'
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
       HASURA_GRAPHQL_ADMIN_SECRET: secret
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
+      HASURA_GRAPHQL_JWT_SECRET: '{"type": "HS256", "key": "b88be4a82e11ffa8b2e7f670539ba2e0cd5e5888ed20630dbf28c3ff531bc8e00064cc6fd6bd68deb49c2fe2305ed625de42e91587ce7e241e39dcd8cad0d063"}'
+      API_URL: http://host.docker.internal:3000
     depends_on:
       - postgres
       - api
