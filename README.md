@@ -6,6 +6,8 @@ The following commands must be executed first to install dependencies
 
 ```bash
 npm i
+cd gdg-sample-api
+npm i
 ```
 
 ## Run

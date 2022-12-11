@@ -33,7 +33,7 @@ services:
   api:
     image: node:14
     volumes:
-      - ./gdg-sample-api/api.js:/app/api.js
+      - ./gdg-sample-api:/app
     working_dir: /app
     command: npm start
     ports:
