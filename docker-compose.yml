@@ -1,7 +1,6 @@
 version: '3'
 services:
   hasura:
-    # image: hasura/graphql-engine:v2.16.0
     image: hasura/graphql-engine:v2.16.0.cli-migrations-v3
     ports:
       - "8080:8080"
@@ -14,6 +13,7 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: secret
     depends_on:
       - postgres
+      - api
     restart: always
     working_dir: /app
     volumes:
@@ -29,6 +29,15 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - ./data/db_data:/var/lib/postgresql/data
+  
+  api:
+    image: node:14
+    volumes:
+      - ./gdg-sample-api/api.js:/app/api.js
+    working_dir: /app
+    command: npm start
+    ports:
+      - "3000:3000"
   pgadmin:
     image: dpage/pgadmin4
     ports:

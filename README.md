@@ -2,7 +2,7 @@
 
 ## Installing Dependencies
 
-The following command must be executed first to install dependencies
+The following commands must be executed first to install dependencies
 
 ```bash
 npm i
