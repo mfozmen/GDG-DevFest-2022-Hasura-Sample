@@ -1,1 +1,3 @@
-[]
+- "!include public_baskets.yaml"
+- "!include public_baskets_products.yaml"
+- "!include public_products.yaml"

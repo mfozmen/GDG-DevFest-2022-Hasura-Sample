@@ -1,0 +1,11 @@
+table:
+  name: baskets
+  schema: public
+array_relationships:
+  - name: baskets_products
+    using:
+      foreign_key_constraint_on:
+        column: basket_id
+        table:
+          name: baskets_products
+          schema: public

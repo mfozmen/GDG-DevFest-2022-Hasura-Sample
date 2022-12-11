@@ -1,0 +1,10 @@
+table:
+  name: baskets_products
+  schema: public
+object_relationships:
+  - name: basket
+    using:
+      foreign_key_constraint_on: basket_id
+  - name: product
+    using:
+      foreign_key_constraint_on: product_id

@@ -1,3 +1,14 @@
 table:
   name: users
   schema: public
+remote_relationships:
+  - definition:
+      to_source:
+        field_mapping:
+          id: user_id
+        relationship_type: array
+        source: main
+        table:
+          name: baskets
+          schema: public
+    name: users_baskets
