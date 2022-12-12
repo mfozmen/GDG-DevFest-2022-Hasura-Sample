@@ -13,7 +13,8 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: secret
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
       HASURA_GRAPHQL_JWT_SECRET: '{"type": "HS256", "key": "b88be4a82e11ffa8b2e7f670539ba2e0cd5e5888ed20630dbf28c3ff531bc8e00064cc6fd6bd68deb49c2fe2305ed625de42e91587ce7e241e39dcd8cad0d063"}'
-      API_URL: http://host.docker.internal:3000
+      ACTION_BASE_URL: http://host.docker.internal:3000      
+      SEND_WELCOME_EMAIL_URL: http://host.docker.internal:3000/send-welcome-email
     depends_on:
       - postgres
       - api

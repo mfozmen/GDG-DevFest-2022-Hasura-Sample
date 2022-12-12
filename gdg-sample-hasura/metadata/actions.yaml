@@ -2,7 +2,7 @@ actions:
   - name: loginUser
     definition:
       kind: synchronous
-      handler: '{{API_URL}}/login-user'
+      handler: '{{ACTION_BASE_URL}}/login-user'
     permissions:
       - role: anonymous
 custom_types:

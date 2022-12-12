@@ -6,19 +6,22 @@ const jwt = require("jsonwebtoken");
 
 app.use(bodyParser.json());
 
+app.listen(3000, () => {
+  console.log("API listens to http://localhost:3000");
+});
+
 app.post("/login-user", (req, res) => {
   const input = req.body.input;
 
-  const query = `query GetUserInfo($username: String!, $password: String!) {
-    users(where: {username: {_eq: $username}, password: {_eq: $password}}) {
+  const query = `query GetUserInfo($email: String!, $password: String!) {
+    users(where: {email: {_eq: $email}, password: {_eq: $password}}) {
       id
       role
     }
   }`;
 
-  postToHasura(query, { username: input.username, password: input.password })
+  postToHasura(query, { email: input.email, password: input.password })
     .then((response) => {
-      console.log(response.data);
       var user = response.data.data.users[0];
       return signJwt(user.id, user.role);
     })
@@ -28,10 +31,6 @@ app.post("/login-user", (req, res) => {
     .catch((error) => {
       res.status(400).json({ message: error.message });
     });
-});
-
-app.listen(3000, () => {
-  console.log("API listens to http://localhost:3000");
 });
 
 function postToHasura(query, variables) {
@@ -62,3 +61,9 @@ function signJwt(userId, role) {
   };
   return jwt.sign(payload, jwtSecret, { expiresIn: "365d" });
 }
+
+app.post("/send-welcome-email", (req, res) => {
+  var email = req.body.event.data.new.email;
+
+  res.status(200).json({ message: "Welcome email sent to " + email });
+});
