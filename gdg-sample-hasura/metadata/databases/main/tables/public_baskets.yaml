@@ -9,6 +9,17 @@ array_relationships:
         table:
           name: baskets_products
           schema: public
+remote_relationships:
+  - definition:
+      to_source:
+        field_mapping:
+          user_id: id
+        relationship_type: object
+        source: crm
+        table:
+          name: users
+          schema: public
+    name: user
 insert_permissions:
   - role: user
     permission:

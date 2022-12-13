@@ -1,6 +1,10 @@
 table:
   name: users
   schema: public
+object_relationships:
+  - name: user_role
+    using:
+      foreign_key_constraint_on: role
 remote_relationships:
   - definition:
       to_source:
@@ -11,7 +15,7 @@ remote_relationships:
         table:
           name: baskets
           schema: public
-    name: users_baskets
+    name: baskets
 select_permissions:
   - role: user
     permission:

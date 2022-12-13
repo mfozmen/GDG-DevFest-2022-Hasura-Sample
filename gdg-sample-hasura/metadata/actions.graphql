@@ -1,6 +1,6 @@
 type Mutation {
   loginUser(
-    username: String!
+    email: String!
     password: String!
   ): LoginUserOutput
 }
