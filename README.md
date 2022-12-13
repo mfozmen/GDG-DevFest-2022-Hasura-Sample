@@ -26,3 +26,12 @@ The following command can be executed to reach Hasura Console with migrations
 cd gdg-sample-hasura
 npx hasura console --admin-secret secret
 ```
+
+## How to Reach PG Admin
+
+The following url can be used to reach PG Admin to reach Postgres Databases
+
+http://localhost:5050
+
+Email: admin@admin.com
+Password: admin
